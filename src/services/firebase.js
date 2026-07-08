@@ -21,8 +21,8 @@ const missingKeys = Object.entries(firebaseConfig).filter(
 
 if (missingKeys.length > 0) {
   console.warn(
-    '[Inventory Robo] Firebase config missing. Running in demo mode.\n' +
-    'Fill in your .env file with real Firebase credentials to enable auth + database.'
+    '[RoboInvento] Firebase config missing. Running in demo mode.\n' +
+    'Please add your Firebase credentials to the .env file if you want cloud storage.'
   );
 }
 

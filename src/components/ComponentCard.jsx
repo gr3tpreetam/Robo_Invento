@@ -210,10 +210,10 @@ export default function ComponentCard({ part, onAddToInventory }) {
 
       {/* Actions */}
       <div style={{ display: 'flex', gap: '0.5rem', paddingTop: '0.25rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        {part.DataSheetUrl && (
-          <a href={part.DataSheetUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary"
+        {(part.DataSheetUrl || part.ProductDetailUrl) && (
+          <a href={part.DataSheetUrl || part.ProductDetailUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary"
             style={{ flex: 1, justifyContent: 'center', fontSize: '0.75rem', padding: '0.375rem 0.75rem' }}>
-            <DocumentTextIcon style={{ width: '0.875rem', height: '0.875rem' }} /> Datasheet
+            <DocumentTextIcon style={{ width: '0.875rem', height: '0.875rem' }} /> {part.DataSheetUrl ? 'Datasheet' : 'Product Info'}
           </a>
         )}
         <button onClick={() => onAddToInventory(part)} id={`add-to-inv-${part.MouserPartNumber}`} className="btn-primary"

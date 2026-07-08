@@ -15,9 +15,9 @@ import { auth } from '../services/firebase';
 
 // --- Demo mode fallback (no Firebase config) ---
 const DEMO_USER = {
-  uid: 'demo-user-001',
-  email: 'demo@inventoryrobo.dev',
-  displayName: 'Demo User',
+  uid: 'demo-user-123',
+  email: 'demo@roboinvento.dev',
+  displayName: 'Preetam',
   photoURL: null,
 };
 

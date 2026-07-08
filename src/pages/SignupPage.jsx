@@ -42,10 +42,10 @@ export default function SignupPage() {
 
       <div style={{ width: '100%', maxWidth: '28rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div className="animate-float" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '4rem', height: '4rem', borderRadius: '1rem', background: 'linear-gradient(135deg, #06b6d4, #3b82f6)', boxShadow: 'var(--shadow-glow-cyan)', marginBottom: '1rem' }}>
-            <CpuChipIcon style={{ width: '2rem', height: '2rem', color: 'white' }} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+            <CpuChipIcon style={{ width: '2rem', height: '2rem', color: '#22d3ee' }} />
+            <h1 className="text-gradient" style={{ fontSize: '1.5rem', fontWeight: 700 }}>RoboInvento</h1>
           </div>
-          <h1 className="text-gradient" style={{ fontSize: '1.5rem', fontWeight: 700 }}>Inventory Robo</h1>
           <p style={{ color: '#64748b', fontSize: '0.875rem', marginTop: '0.25rem' }}>Create your account</p>
         </div>
 

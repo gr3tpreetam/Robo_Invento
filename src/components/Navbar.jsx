@@ -35,9 +35,9 @@ export default function Navbar() {
           <div style={{ width: '2.25rem', height: '2.25rem', borderRadius: '0.75rem', background: 'linear-gradient(135deg, #06b6d4, #2563eb)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-glow-cyan)' }}>
             <CpuChipIcon style={{ width: '1.25rem', height: '1.25rem', color: 'white' }} />
           </div>
-          <div className="hide-mobile">
-            <p className="text-gradient" style={{ fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>Inventory Robo</p>
-            <p style={{ fontSize: '0.625rem', color: '#64748b', lineHeight: 1, marginTop: '0.125rem' }}>Electronics Manager</p>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <p className="text-gradient" style={{ fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>RoboInvento</p>
+            <p style={{ fontSize: '0.625rem', color: '#64748b', marginTop: '0.125rem' }}>Electronics Manager</p>
           </div>
         </Link>
 

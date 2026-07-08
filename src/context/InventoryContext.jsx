@@ -140,9 +140,18 @@ export function InventoryProvider({ children }) {
     }
 
     dispatch({ type: 'SET_LOADING', payload: true });
-    const unsubscribe = subscribeToInventory(currentUser.uid, (items) => {
-      dispatch({ type: 'SET_ITEMS', payload: items });
-    });
+    const unsubscribe = subscribeToInventory(
+      currentUser.uid,
+      (items) => {
+        dispatch({ type: 'SET_ITEMS', payload: items });
+      },
+      (error) => {
+        dispatch({
+          type: 'SET_ERROR',
+          payload: `Failed to load inventory: ${error.message}`,
+        });
+      }
+    );
     return unsubscribe;
   }, [currentUser, isDemoMode]);
 

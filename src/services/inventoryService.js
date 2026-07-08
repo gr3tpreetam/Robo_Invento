@@ -23,16 +23,23 @@ const COLLECTION = 'inventory';
  * @param {Function} callback - called with array of items
  * @returns {Function} unsubscribe function
  */
-export function subscribeToInventory(userId, callback) {
+export function subscribeToInventory(userId, callback, errorCallback) {
   const q = query(
     collection(db, COLLECTION),
     where('userId', '==', userId),
     orderBy('createdAt', 'desc')
   );
-  return onSnapshot(q, (snap) => {
-    const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-    callback(items);
-  });
+  return onSnapshot(
+    q,
+    (snap) => {
+      const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+      callback(items);
+    },
+    (err) => {
+      console.error('[inventoryService] sync error:', err);
+      if (errorCallback) errorCallback(err);
+    }
+  );
 }
 
 /**
